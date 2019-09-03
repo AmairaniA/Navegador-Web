@@ -32,5 +32,23 @@ namespace Navegador
         {
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Add(webBrowser1.Url.ToString());
+        }
+
+        private void TextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyValue==(char)Keys.Return)
+            {
+                webBrowser1.Navigate(textBox1.Text);
+            }
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(comboBox1.SelectedItem.ToString());
+        }
     }
 }
